@@ -79,5 +79,5 @@ resulst: ![image info](./resources/images/rollHashCode.png)
   }
   ```
   resulst:
-  ![image info](./resources/images/strHashCode.png)
+  ![image info](./resources/images/myStrHashCode.png)
 
