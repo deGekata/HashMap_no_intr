@@ -31,8 +31,8 @@ char *randstring(size_t length) {
 
 
 #define DEBUG
-#undef DEBUG
-const size_t insert_num_target = 140000;
+// #undef DEBUG
+const size_t insert_num_target = 1400000;
 const size_t rand_str_len = 15;
 
 int main() {
@@ -109,5 +109,47 @@ int main() {
     destroyHashmap(&map);
     dprintf("%d line\n", __LINE__);
     dprintf("%f mid\n", (float) sum / non_zero);
+    uint64_t a = 10, b = 5;
+    char* m_str = "abcde";
+
+    printf("%lu %lu", a, b);
     return 0;
 } 
+
+
+// uint64_t a = 10, b = 5;
+//     char* m_str = "abcde";
+//     __asm__ ( ".intel_syntax noprefix\n\t"
+//         "mov rsi, %1\n\t"
+//         "mov rbx, 1234\n\t" /* ассемблерная вставка */
+//         "mov rcx, 0\n\t" /* ассемблерная вставка */
+//         "mov rax, 0\n\t"
+//         "begin:\n\t" /* ассемблерная вставка */
+//         "lodsb \n\t"
+//         "test al, al\n\t"
+//         "je end\n\t"
+//         "mov rcx, rbx\n\t"
+//         "shl rbx, 7\n\t"
+//         // "xor rbx, rax\n\t"
+//         "add rbx, rcx\n\t"
+//         "xor rbx, rax\n\t"
+//         "jmp begin\n\t"
+//         "end:\n\t"
+//         "mov %0, rbx\n\t"
+//         ".att_syntax\n\t"
+//         : "=r"(b) /* выходные операнды */
+//         : "r"(m_str) /* входные операнды */
+//         : "%rsi", "%rax", "%rcx", "%rbx" /* разрушаемые регистры */
+
+//         );
+
+
+
+// uint64_t strHashCode(char* str) {
+//     uint64_t hash = 1234;
+//     while (*str) {
+//         hash = ((hash << 7) + hash) ^ *(str++);
+//     }
+
+//     return hash;
+// }

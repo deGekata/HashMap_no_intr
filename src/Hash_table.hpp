@@ -7,13 +7,13 @@
 #include <malloc.h>
 
 #define HASHCODE(a) strHashCode((a))
-#define NO_RE_HASH 0
+#define NO_RE_HASH 1
 
 static const float hashmap_max_load = 0.7f;
 #if NO_RE_HASH == 0
     static const size_t hashmap_base_size = 1000;
 #else
-    static const size_t hashmap_base_size = 100;
+    static const size_t hashmap_base_size = 100000;
 #endif
 
 static const size_t hashmap_extent_coef = 2;

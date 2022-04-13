@@ -66,7 +66,8 @@ note:
     return hash;
   }
   ```
-resulst: ![image info](./resources/images/rollHashCode.png)
+  resulst:
+  ![image info](./resources/images/rollHashCode.png)
 
 * ### My hash code:
   ```
